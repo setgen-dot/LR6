@@ -25,9 +25,60 @@
 ![слияние](screenshots/8.png)
 ![удаление ветки](screenshots/9.png)
 
-## 5 Добавление изменений и откат коммита
+## 4 Добавление изменений и откат коммита
 
 Во-первых создаем файл changes.txt и коммитим его, после добавляем еще один файл newChanges.txt и так же его коммитим. После второго коммита делаем откат с помощью команжды git reset
 ![Добавление changes.txt](screenshots/10.png)
 ![Добавление newChanges.txt и откат коммита](screenshots/11.png)
 
+## 5 Лог команд
+```bash
+git clone git@github.com:setgen-dot/LR6.git
+cd LR6
+git config user.name "4414 Филиппов Д.С."
+git config user.email "den.filippov.m@gmail.com"
+git pull
+ls
+git branch feature
+git checkout feature
+git status
+git add .
+git commit -m "change mergefile.txt from feature"
+git checkout master
+git status
+git add .
+git commit -m "change mergefile.txt from master"
+git log --oneline
+git checkout feature
+git log --oneline
+git checkout master
+git merge feature
+git add .
+git status
+git commit
+git branch -d feature
+git status
+git add .
+git commit -m "add changes.txt"
+git status
+git add .
+git commit -m "add newChanges.txt"
+git status
+git reset --hard HEAD~1
+```
+
+##  6 История операций
+
+```bash
+74788cb | 2025-10-17 | 4414 Филиппов Д.С. | change README.md
+49b72de | 2025-10-17 | 4414 Филиппов Д.С. | add screenshots and change README.me
+0364673 | 2025-10-17 | 4414 Филиппов Д.С. | add changes.txt
+c1ac104 | 2025-10-17 | 4414 Филиппов Д.С. | change mergefile.txt from master
+872adb4 | 2025-10-17 | setgen-dot | Create fileFromGitHubInterface
+921f53b | 2020-11-21 | Kurtyanik | Обновление информации
+c08a654 | 2020-11-21 | Kurtyanik | Файл создан пустым
+3c6e913 | 2020-11-21 | Kurtyanik | Initial commit
+```
+
+## 7 Выводы
+В данной работе были изучены базовые команды для работы с личным и удалённым репозиторием в системе управления версиями. Работа проводилась в среде Git Bash, были использованы команды git pull, git clone, git add, git commit, git checkout, git merge и др.
